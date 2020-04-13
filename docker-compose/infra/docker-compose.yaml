@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  mongodb_container:
+    image: mongo:4.2.5
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+      MONGO_INITDB_DATABASE: soccer
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d
+volumes:
+  mongodb_data_container:

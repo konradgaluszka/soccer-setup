@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  vars:
+    http_port: 80
+  tasks:
+    - name: Start up backend
+      shell:
